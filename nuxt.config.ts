@@ -4,14 +4,9 @@ export default {
   devtools: { enabled: true },
   routes: [
     {
-      name: 'home',
-      path: '/',
-      component: 'pages/index.vue'
-    },
-    {
-      name: 'about',
-      path: '/about',
-      component: 'pages/about.vue'
+      name: 'admin_gui',
+      path: '/admin_gui',
+      component: 'pages/admin_gui.vue'
     },
   ],
 }
