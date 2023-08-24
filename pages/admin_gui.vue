@@ -4,7 +4,9 @@
     <!-- Main content -->
     <div class="main-content">
         <json_builder />
-        <json_render />
+        <json_render>
+            <ContentDoc path="/" />
+        </json_render>
     </div>
 </template>
   

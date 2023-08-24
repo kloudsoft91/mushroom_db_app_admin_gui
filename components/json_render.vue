@@ -2,20 +2,29 @@
     <!-- JSON Render Box -->
     <div class="json-render-box">
         <div class="code-container">
-            <p class="code">gsdagfdsas<br>fdgafdgaerg</p>
             <span class="language-text">json</span>
             <div class="top-container">
                 <div class="copy-container">
-                    <!-- <span class="copied-text" v-if="copied">Copied code!</span> -->
-                    <button @click="copy(code)">Copy Code</button>
+                    <span class="copied-text" v-if="copied">Copied code!</span> -->
+                    <button class="copy-button" @click="copy(code)">Copy Code</button>
                 </div>
             </div>
+            <slot />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+import { useClipboard } from '@vueuse/core';
 
+const { copy, copied, text } = useClipboard();
+
+const props = withDefaults(
+    defineProps<{
+        code?: string;
+    }>(),
+    { code: '' }
+);
 </script>
 
 <style>
@@ -59,8 +68,20 @@
     text-transform: uppercase;
     border-bottom-right-radius: 0.25em;
     border-bottom-left-radius: 0.25em;
-    background: #f7df1e;
+    background-color: #f7df1e;
     color: black;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0;
+    right: 0em;
+    padding: 0.25em 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    background: black;
+    color: white;
 }
 
 :slotted(pre) {
@@ -93,5 +114,15 @@
     display: inline-block;
     text-align: left;
     color: rgba(115, 138, 148, 0.4);
+}
+
+:slotted(pre code .highlight) {
+    background-color: #363b46;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid red;
 }
 </style>

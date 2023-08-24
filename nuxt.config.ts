@@ -2,6 +2,10 @@
 export default {
   // Configuration options here
   devtools: { enabled: true },
+  modules: [
+    '@nuxt/content',
+    '@nuxt/ui'
+  ],
   routes: [
     {
       name: 'admin_gui',
