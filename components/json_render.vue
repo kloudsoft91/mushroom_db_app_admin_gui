@@ -30,14 +30,12 @@ const props = withDefaults(
 <style>
 .json-render-box {
     flex: 1;
-    background-color: #fff;
     padding: 2rem;
     border: 1px solid #ccc;
     max-width: 50%;
 }
 
 .code-container {
-    background: #1e1e1e;
     position: relative;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -56,7 +54,9 @@ const props = withDefaults(
 }
 
 .copied-text {
-    margin-right: 1em;
+    margin-right: 6em;
+    top: 0;
+    color: white;
 }
 
 .language-text {
@@ -75,7 +75,7 @@ const props = withDefaults(
 .copy-button {
     position: absolute;
     top: 0;
-    right: 0em;
+    right: 0;
     padding: 0.25em 0.5em;
     border-top-right-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
@@ -84,7 +84,7 @@ const props = withDefaults(
     color: white;
 }
 
-:slotted(pre) {
+pre {
     margin-top: 0;
     margin-bottom: 0;
     display: flex;
@@ -95,18 +95,18 @@ const props = withDefaults(
     counter-reset: lines;
 }
 
-:slotted(pre code) {
+pre code {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-:slotted(pre code .line) {
+pre code .line {
     display: inline-table;
     min-height: 1rem;
 }
 
-:slotted(pre code .line::before) {
+pre code .line::before {
     counter-increment: lines;
     content: counter(lines);
     width: 1rem;
@@ -114,15 +114,5 @@ const props = withDefaults(
     display: inline-block;
     text-align: left;
     color: rgba(115, 138, 148, 0.4);
-}
-
-:slotted(pre code .highlight) {
-    background-color: #363b46;
-    display: block;
-    margin-right: -1em;
-    margin-left: -1em;
-    padding-right: 1em;
-    padding-left: 0.75em;
-    border-left: 0.25em solid red;
 }
 </style>
