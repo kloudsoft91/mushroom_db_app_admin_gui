@@ -104,7 +104,7 @@
             </fieldset>
             <br>
             <fieldset class="fieldset-box" id="mush_gills_fset">
-                <legend>Gill Features</legend>
+                <legend>Hymenium Features</legend>
                 <label id="mush_gills_desc_lbl">Gills Description</label>
                 <input type="text" id="mush_gills_desc" class="text-box-input" />
                 <br>
@@ -122,7 +122,34 @@
             <br>
             <fieldset class="fieldset-box" id="mush_cap_fset">
                 <legend>Cap Features</legend>
-                
+                <label id="mush_cap_desc_lbl">Cap Description</label>
+                <input type="text" id="mush_cap_desc" class="text-box-input" />
+                <br>
+                <label id="mush_cap_colour_lbl">Cap Colour</label>
+                <select id="mush_cap_colour" name="mush_cap_colour" class="text-box-input">
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="yellowish-brown">Yellowish-Brown</option>
+                    <option value="pink">Pink</option>
+                </select>
+                <br>
+                <label id="mush_cap_diameter_min_lbl">Min Diameter (cm)</label>
+                <input type="text" id="mush_cap_diameter_min" class="text-box-input" />
+                <br>
+                <label id="mush_cap_diameter_max_lbl">Max Diameter (cm)</label>
+                <input type="text" id="mush_cap_diameter_max" class="text-box-input" />
+                <br>
+                <label id="mush_cap_thickness_min_lbl">Min Thickness (cm)</label>
+                <input type="text" id="mush_cap_thickness_min" class="text-box-input" />
+                <br>
+                <label id="mush_cap_thickness_max_lbl">Max Thickness (cm)</label>
+                <input type="text" id="mush_cap_thickness_max" class="text-box-input" />
+                <br>
+                <label id="mush_cap_texture_lbl">Texture</label>
+                <input type="text" id="mush_cap_texture" class="text-box-input" />
+                <br>
+                <label id="mush_cap_shape_lbl">Shape</label>
+                <input type="text" id="mush_cap_shape" class="text-box-input" />
             </fieldset>
             <br><br>
             <input type="reset" class="form-button" />
@@ -161,3 +188,28 @@
     border-bottom-left-radius: 0.5em;
 }
 </style>
+
+<script>
+export default {
+  mounted() {
+    if (process.client) {
+      const script = document.createElement("script");
+      script.onload = this.onScriptLoaded;
+      script.type = "text/javascript";
+      script.src = "~/assets/scripts/admin_gui.js";
+      document.head.appendChild(script);
+    } else {
+      this.onScriptLoaded();
+    }
+  },
+  methods: {
+    onScriptLoaded(event = null) {
+      if (event) {
+        console.log("Was added");
+      } else {
+        console.log("Already existed");
+      }
+    }
+  }
+}
+</script>
