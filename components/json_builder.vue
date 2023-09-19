@@ -36,7 +36,7 @@
                 <input type="text" id="mush_desc" class="text-box-input" v-model="description" @change="addMushKey('description', description)" />
                 <br>
                 <label for="mush_lookalikes">Lookalikes*</label>
-                <input type="text" id="mush_lookalikes" class="text-box-input" v-model="lookalikes" @change="addMushKey('lookalikes', lookalikes.split(','))" />
+                <input type="text" id="mush_lookalikes" class="text-box-input" v-model="lookalikes" @change="addMushKey('lookalikes', lookalikes.split(',').map(Number))" />
                 <br>
                 <label for="mush_links">Links to Websites*</label>
                 <input type="text" id="mush_links" class="text-box-input" v-model="links" @change="addMushKey('links', links.split(','))" />
