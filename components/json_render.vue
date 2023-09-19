@@ -10,7 +10,7 @@
                 </div>
             </div>
             <!-- <slot /> -->
-            <div>{{ JSON.stringify(mushJSON, undefined, 4) }}</div>
+            <div><pre>{{ JSON.stringify(mushJSON, undefined, 4) }}</pre></div>
         </div>
     </div>
 </template>
