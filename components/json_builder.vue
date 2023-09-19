@@ -1,7 +1,6 @@
 <template>
     <!-- JSON Builder Box -->
     <div class="json-builder-box">
-        <div>json: {{ mushJSON }}</div>
         <form id="input_form">
             <label id="mush_note_1">* Enter values separated by a comma. e.g. Red,Yellow</label><br><br>
             <fieldset class="fieldset-box" id="mush_tags_fset">
