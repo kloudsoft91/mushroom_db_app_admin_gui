@@ -9,22 +9,17 @@
                     <button class="copy-button" @click="copy(code)">Copy Code</button>
                 </div>
             </div>
-            <slot />
+            <!-- <slot /> -->
+            <div>{{ JSON.stringify(mushJSON, undefined, 4) }}</div>
         </div>
     </div>
 </template>
 
-<script setup lang="ts">
-import { useClipboard } from '@vueuse/core';
+<script setup>
+import { useClipboard } from '@vueuse/core'
 
-const { copy, copied, text } = useClipboard();
-
-const props = withDefaults(
-    defineProps<{
-        code?: string;
-    }>(),
-    { code: '' }
-);
+const mushJSON = useState('mushJSON')
+const { copy, copied, text } = useClipboard()
 </script>
 
 <style>
