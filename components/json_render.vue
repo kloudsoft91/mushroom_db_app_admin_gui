@@ -6,7 +6,7 @@
             <div class="flex justify-end">
                 <div class="flex">
                     <span class="absolute right-28 top-0 py-1 text-base text-emerald-500" v-if="copied">Copied Code &#10003;</span>
-                    <button class="absolute top-0 right-0 px-2 py-1 text-base rounded-b-lg light:text-white light:bg-black dark:text-black dark:bg-white" @click="copy">Copy Code</button>
+                    <button class="absolute top-0 right-0 px-2 py-1 text-base rounded-b-lg light:text-white light:bg-black dark:text-black dark:bg-white" @click="copy" @mouseleave="copied = false">Copy Code</button>
                 </div>
             </div>
             <div class="flex relative w-full mt-14">
@@ -47,8 +47,6 @@ const syntaxHighlight = (json) => {
 const copy = () => {
     navigator.clipboard.writeText(JSON.stringify(mushJSON.value, undefined, 4));
     copied.value = true;
-    //setTimeout(() => {console.log("Delayed for 1 second.")}, 1000);
-    //copied.value = false;
 }
 </script>
 
