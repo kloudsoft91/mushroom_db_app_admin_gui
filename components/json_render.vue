@@ -1,113 +1,69 @@
 <template>
     <!-- JSON Render Box -->
-    <div class="json-render-box">
-        <div class="code-container">
-            <span class="language-text">json</span>
-            <div class="top-container">
-                <div class="copy-container">
-                    <span class="copied-text" v-if="copied">Copied code!</span> -->
-                    <button class="copy-button" @click="copy(code)">Copy Code</button>
+    <div class="flex p-4 border-1 border-slate-150 w-1/2">
+        <div class="relative w-full overflow-hidden mt-2 mb-2 pt-2 rounded-lg">
+            <span class="absolute top-0 left-4 px-2 py-1 text-base uppercase rounded-b-lg text-inherit bg-yellow-300">json</span>
+            <div class="flex justify-end">
+                <div class="flex">
+                    <span class="absolute right-28 top-0 py-1 text-base text-emerald-500" v-if="copied">Copied Code &#10003;</span>
+                    <button class="absolute top-0 right-0 px-2 py-1 text-base rounded-b-lg light:text-white light:bg-black dark:text-black dark:bg-white" @click="copy">Copy Code</button>
                 </div>
             </div>
-            <!-- <slot /> -->
-            <div><pre>{{ JSON.stringify(mushJSON, undefined, 4) }}</pre></div>
+            <div class="flex relative w-full mt-14">
+                <pre class="flex overflow-x-auto p-2 leading-relaxed counter-reset:lines">
+                    <code class="w-full flex-col" v-html="syntaxHighlight(mushJSON)" />
+                </pre>
+            </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import { useClipboard } from '@vueuse/core'
-
 const mushJSON = useState('mushJSON')
-const { copy, copied, text } = useClipboard()
+const copied = ref(false)
+
+const syntaxHighlight = (json) => {
+    json = JSON.stringify(json, undefined, 4);
+    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    json = json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        var cls = 'number';
+        if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+                cls = 'key';
+            } else {
+                cls = 'string';
+            }
+        } else if (/true|false/.test(match)) {
+            cls = 'boolean';
+        } else if (/null/.test(match)) {
+            cls = 'null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+    });
+    json = json.split(/\r?\n/).map((item) => {return '<span class="line">' + item + '</span><br>'}).join('');
+    return json;
+}
+
+const copy = () => {
+    navigator.clipboard.writeText(JSON.stringify(mushJSON.value, undefined, 4));
+    copied.value = true;
+    //setTimeout(() => {console.log("Delayed for 1 second.")}, 1000);
+    //copied.value = false;
+}
 </script>
 
 <style>
-.json-render-box {
-    flex: 1;
-    padding: 2rem;
-    border: 1px solid #ccc;
-    max-width: 50%;
-}
-
-.code-container {
-    position: relative;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-top: 1em;
-    overflow: hidden;
-    border-radius: 0.5rem;
-}
-
-.top-container {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.copy-container {
-    display: flex;
-}
-
-.copied-text {
-    margin-right: 6em;
-    top: 0;
-    color: white;
-}
-
-.language-text {
-    position: absolute;
-    top: 0;
-    left: 1em;
-    padding: 0.25em 0.5em;
-    font-size: 14px;
-    text-transform: uppercase;
-    border-bottom-right-radius: 0.25em;
-    border-bottom-left-radius: 0.25em;
-    background-color: #f7df1e;
-    color: black;
-}
-
-.copy-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.25em 0.5em;
-    border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
-    background: black;
-    color: white;
-}
-
-pre {
-    margin-top: 0;
-    margin-bottom: 0;
-    display: flex;
-    flex: 1 1 0%;
-    overflow-x: auto;
-    padding: 1rem;
-    line-height: 1.625;
-    counter-reset: lines;
-}
-
-pre code {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-pre code .line {
-    display: inline-table;
-    min-height: 1rem;
-}
-
-pre code .line::before {
+.string { color: darkorange; }
+.number { color: darkgreen; }
+.boolean { color: blue; }
+.null { color: blue; }
+.key { color: darkslateblue; }
+.line {
     counter-increment: lines;
+}
+.line::before {
     content: counter(lines);
-    width: 1rem;
     margin-right: 1.5rem;
-    display: inline-block;
-    text-align: left;
     color: rgba(115, 138, 148, 0.4);
 }
 </style>

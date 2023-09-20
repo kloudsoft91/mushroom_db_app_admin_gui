@@ -1,35 +1,9 @@
 <template>
-    <div>
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="navbar-header">
-                <h1 class="navbar-title">Mushroom MetaData Helper Tool</h1>
+    <header class="desktop:block">
+        <nav class="bg-emerald-500 flex content-center">
+            <div class="mb-2 flex">
+                <h1 class="indent-5 font-semibold light:text-white dark:text-black text-lg tablet:text-xl desktop:text-3xl">Mushy MetaData Helper</h1>
             </div>
         </nav>
-    </div>
+    </header>
 </template>
-
-<style>
-/* Navbar styles */
-.navbar {
-    background-color: #7e6551;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    justify-content: space-between;
-}
-
-.navbar-header {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navbar-title {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
-</style>

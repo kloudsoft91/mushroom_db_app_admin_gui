@@ -1,0 +1,65 @@
+<template>
+    <fieldset class="mb-2 border-1 border-slate-150 px-2" id="mush_basic_info_fset">
+        <legend>Basic Description / Info</legend>
+        <label for="mush_latin">Latin Names*</label>
+        <input type="text" id="mush_latin" class="mb-2 border-1 border-slate-150 flex w-full" v-model="latinNames" @change="addMushKey('latin_names', latinNames.split(',').map((item) => {return item.trimStart()}))" />
+        
+        <label for="mush_common">Common Names*</label>
+        <input type="text" id="mush_common" class="mb-2 border-1 border-slate-150 flex w-full" v-model="commonNames" @change="addMushKey('common_names', commonNames.split(',').map((item) => {return item.trimStart()}))" />
+        
+        <label for="mush_maori">Maori Names*</label>
+        <input type="text" id="mush_maori" class="mb-2 border-1 border-slate-150 flex w-full" v-model="maoriNames" @change="addMushKey('maori_names', maoriNames.split(',').map((item) => {return item.trimStart()}))" />
+        
+        <label for="mush_genus">Genus</label>
+        <input type="text" id="mush_genus" class="mb-2 border-1 border-slate-150 flex w-full" v-model="genus" @change="addMushKey('genus', genus)" />
+        
+        <label for="mush_desc">Description</label>
+        <input type="text" id="mush_desc" class="mb-2 border-1 border-slate-150 flex w-full" v-model="description" @change="addMushKey('description', description)" />
+        
+        <label for="mush_lookalikes">Lookalikes*</label>
+        <input type="text" id="mush_lookalikes" class="mb-2 border-1 border-slate-150 flex w-full" v-model="lookalikes" @change="addMushKey('lookalikes', lookalikes.split(',').map(Number))" />
+        
+        <label for="mush_links">Links to Websites*</label>
+        <input type="text" id="mush_links" class="mb-2 border-1 border-slate-150 flex w-full" v-model="links" @change="addMushKey('links', links.split(',').map((item) => {return item.trimStart()}))" />
+        
+        <label for="mush_books">Books*</label>
+        <input type="text" id="mush_books" class="mb-2 border-1 border-slate-150 flex w-full" v-model="books" @change="addMushKey('nz_books', books.split(',').map((item) => {return item.trimStart()}))" />
+        
+        <label for="mush_edibility">Edibility</label>
+        <input type="text" id="mush_edibility" class="mb-2 border-1 border-slate-150 flex w-full" v-model="edibility" @change="addMushKey('edibility', edibility)" />
+        
+        <label for="mush_juvenile_photos">Juvenile Photos*</label>
+        <input type="text" id="mush_juvenile_photos" class="mb-2 border-1 border-slate-150 flex w-full" v-model="juvenilePhotos" @change="addMushKey('juvenile_photos', juvenilePhotos.split(',').map((item) => {return item.trimStart()}))" />
+        
+        <label for="mush_adult_photos">Adult Photos*</label>
+        <input type="text" id="mush_adult_photos" class="mb-2 border-1 border-slate-150 flex w-full" v-model="adultPhotos" @change="addMushKey('adult_photos', adultPhotos.split(',').map((item) => {return item.trimStart()}))" />
+        
+        <label for="mush_elderly_photos">Elderly Photos*</label>
+        <input type="text" id="mush_elderly_photos" class="mb-2 border-1 border-slate-150 flex w-full" v-model="elderlyPhotos" @change="addMushKey('elderly_photos', elderlyPhotos.split(',').map((item) => {return item.trimStart()}))" />
+    </fieldset>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const mushJSON = useState('mushJSON')
+const latinNames = ref([])
+const commonNames = ref([])
+const maoriNames = ref([])
+const genus = ref("")
+const description = ref("")
+const lookalikes = ref([])
+const links = ref([])
+const books = ref([])
+const edibility = ref("")
+const juvenilePhotos = ref([])
+const adultPhotos = ref([])
+const elderlyPhotos = ref([])
+
+const addMushKey = (key, val, subKey = "") => {
+    if (["stipe_features", "hymenium", "cap_features"].includes(key) && subKey != "") {
+        mushJSON.value[key][subKey] = val;
+    } else {
+        mushJSON.value[key] = val;
+    }
+}
+</script>

@@ -3,7 +3,6 @@ export default {
   // Configuration options here
   devtools: { enabled: true },
   modules: [
-    '@nuxt/content',
     '@nuxt/ui'
   ],
   routes: [
@@ -13,4 +12,8 @@ export default {
       component: 'pages/admin_gui.vue'
     },
   ],
+  //Tailwind CSS config
+  TailwindModules: [
+    '@nuxtjs/tailwindcss'
+  ]
 }

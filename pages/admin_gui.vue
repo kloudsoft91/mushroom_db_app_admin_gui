@@ -2,14 +2,8 @@
 <template>
     <navbar />
     <!-- Main content -->
-    <div class="main-content">
+    <div class="pl-4 pr-4 flex">
         <json_builder />
-        <json_render>
-            <ContentDoc path="/" />
-        </json_render>
+        <json_render />
     </div>
 </template>
-  
-<script setup>
-import '~/assets/css/admin_gui.css'
-</script>
