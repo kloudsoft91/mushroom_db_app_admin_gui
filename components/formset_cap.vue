@@ -12,16 +12,16 @@
             <option value="pink">Pink</option>
         </select>
 
-        <label for="mush_cap_diameter_min">Min Diameter (cm)</label>
+        <label for="mush_cap_diameter_min">Min Diameter (mm)</label>
         <input type="text" id="mush_cap_diameter_min" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capDiaMin" @change="addMushKey('cap_features', parseInt(capDiaMin), 'diameter_min')" />
 
-        <label for="mush_cap_diameter_max">Max Diameter (cm)</label>
+        <label for="mush_cap_diameter_max">Max Diameter (mm)</label>
         <input type="text" id="mush_cap_diameter_max" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capDiaMax" @change="addMushKey('cap_features', parseInt(capDiaMax), 'diameter_max')" />
 
-        <label for="mush_cap_thickness_min">Min Thickness (cm)</label>
+        <label for="mush_cap_thickness_min">Min Thickness (mm)</label>
         <input type="text" id="mush_cap_thickness_min" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capThcMin" @change="addMushKey('cap_features', parseInt(capThcMin), 'thickness_min')" />
 
-        <label for="mush_cap_thickness_max">Max Thickness (cm)</label>
+        <label for="mush_cap_thickness_max">Max Thickness (mm)</label>
         <input type="text" id="mush_cap_thickness_max" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capThcMax" @change="addMushKey('cap_features', parseInt(capThcMax), 'thickness_max')" />
 
         <label for="mush_cap_texture">Texture</label>
