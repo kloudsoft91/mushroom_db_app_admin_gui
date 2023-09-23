@@ -18,6 +18,9 @@
         
         <label for="mush_lookalikes">Lookalikes*</label>
         <input type="text" id="mush_lookalikes" class="mb-2 border-1 border-slate-150 flex w-full" v-model="lookalikes" @change="addMushKey('lookalikes', lookalikes.split(',').map(Number))" />
+
+        <label for="mush_lookalikes_desc">Lookalike Description</label>
+        <input type="text" id="mush_lookalikes_desc" class="mb-2 border-1 border-slate-150 flex w-full" v-model="lookalikeDesc" @change="addMushKey('lookalikes_description', lookalikeDesc)" />
         
         <label for="mush_links">Links to Websites*</label>
         <input type="text" id="mush_links" class="mb-2 border-1 border-slate-150 flex w-full" v-model="links" @change="addMushKey('links', links.split(',').map((item) => {return item.trimStart()}))" />
@@ -27,6 +30,34 @@
         
         <label for="mush_edibility">Edibility</label>
         <input type="text" id="mush_edibility" class="mb-2 border-1 border-slate-150 flex w-full" v-model="edibility" @change="addMushKey('edibility', edibility)" />
+
+        <label for="mush_ecology">Ecology</label>
+        <input type="text" id="mush_ecology" class="mb-2 border-1 border-slate-150 flex w-full" v-model="ecology" @change="addMushKey('ecology', ecology)" />
+
+        <label for="mush_environment">Environment</label>
+        <input type="text" id="mush_environment" class="mb-2 border-1 border-slate-150 flex w-full" v-model="environment" @change="addMushKey('environment', environment)" />
+
+        <label for="mush_timeofyear">Time of Year</label>
+        <select id="mush_timeofyear" name="mush_timeofyear" class="mb-2 border-1 border-slate-150 flex w-full" v-model="timeOfYear" @change="addMushKey('time_of_year', timeOfYear)" multiple>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+
+        <label for="mush_native">Native? (or Introduced)</label>
+        <select id="mush_native" name="mush_native" class="mb-2 border-1 border-slate-150 flex w-full" v-model="native" @change="addMushKey('native_or_introduced', native==='Native')">
+            <option>Native</option>
+            <option>Introduced</option>
+        </select>
         
         <label for="mush_juvenile_photos">Juvenile Photos*</label>
         <input type="text" id="mush_juvenile_photos" class="mb-2 border-1 border-slate-150 flex w-full" v-model="juvenilePhotos" @change="addMushKey('juvenile_photos', juvenilePhotos.split(',').map((item) => {return item.trimStart()}))" />
@@ -48,9 +79,14 @@ const maoriNames = ref([])
 const genus = ref("")
 const description = ref("")
 const lookalikes = ref([])
+const lookalikeDesc = ref("")
 const links = ref([])
 const books = ref([])
 const edibility = ref("")
+const ecology = ref("")
+const environment = ref("")
+const timeOfYear = ref("")
+const native = ref()
 const juvenilePhotos = ref([])
 const adultPhotos = ref([])
 const elderlyPhotos = ref([])

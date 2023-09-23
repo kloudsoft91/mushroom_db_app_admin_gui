@@ -4,6 +4,9 @@
         <label for="mush_gills_desc">Gills Description</label>
         <input type="text" id="mush_gills_desc" class="mb-2 border-1 border-slate-150 flex w-full" v-model="hymeniumDescription" @change="addMushKey('hymenium', hymeniumDescription, 'description')" />
 
+        <label for="mush_gills_type">Type</label>
+        <input type="text" id="mush_gills_type" class="mb-2 border-1 border-slate-150 flex w-full" v-model="hymeniumType" @change="addMushKey('hymenium', hymeniumType, 'type')" />
+
         <label for="mush_gills_colour">Gill Colour</label>
         <select id="mush_gills_colour" name="mush_gills_colour" class="mb-2 border-1 border-slate-150 flex w-full" v-model="hymeniumColour" @change="addMushKey('hymenium', hymeniumColour, 'colour')">
             <option value="white">White</option>
@@ -29,6 +32,7 @@
 import { ref } from 'vue'
 const mushJSON = useState('mushJSON')
 const hymeniumDescription = ref("")
+const hymeniumType = ref("")
 const hymeniumColour = ref("")
 const hymeniumAttachment = ref("")
 const hymeniumSporeColour = ref("")

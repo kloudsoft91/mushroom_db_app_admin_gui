@@ -36,8 +36,8 @@
             <option value="blueish">Blueish</option>
         </select>
 
-        <label for="mush_stipe_volva">Volva Ring</label>
-        <input type="text" id="mush_stipe_volva" class="mb-2 border-1 border-slate-150 flex w-full" v-model="stipeVolva" @change="addMushKey('stipe_features', stipeVolva, 'volva_ring')" />
+        <label for="mush_stipe_attachment">Attachment</label>
+        <input type="text" id="mush_stipe_attachment" class="mb-2 border-1 border-slate-150 flex w-full" v-model="stipeattachment" @change="addMushKey('stipe_features', stipeattachment, 'attachment')" />
     </fieldset>
 </template>
 
@@ -53,7 +53,7 @@ const stipeLenMax = ref()
 const stipeHgtMin = ref()
 const stipeHgtMax = ref()
 const stipeBruiseColour = ref("")
-const stipeVolva = ref("")
+const stipeattachment = ref("")
 
 const addMushKey = (key, val, subKey = "") => {
     if (["stipe_features", "hymenium", "cap_features"].includes(key) && subKey != "") {
