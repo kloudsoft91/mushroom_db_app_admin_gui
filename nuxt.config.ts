@@ -1,14 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default {
   // Configuration options here
+  app: {
+    baseURL: '/', // baseURL: '/<repository>/'
+    buildAssetsDir: 'assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
+  },
   devtools: { enabled: true },
   modules: [
     '@nuxt/ui'
   ],
   routes: [
     {
-      name: 'admin_gui',
-      path: '/admin_gui',
+      name: 'home',
+      path: '/',
       component: 'pages/admin_gui.vue'
     },
   ],
