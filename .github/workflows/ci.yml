@@ -1,16 +1,17 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests
 
-name: CI
+name: ci
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
+    
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
@@ -18,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout 
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
 
       - name: Setup node env 
         uses: actions/setup-node@v3
@@ -26,30 +27,30 @@ jobs:
           node-version: ${{ matrix.node-version }}
           check-latest: true
 
+      - name: Get yarn cache directory path 🛠
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+        
       - name: Cache node modules #to speed up creation of files e.g. dependencies
         id: cache-npm
         uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
-        continue-on-error: true
-        run: npm list
+            ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: npm install
+        run: yarn
 
-      - name: Build
-        run: npm run build
+      - name: Build static pages
+        run: yarn generate
         
-      #- name: Test - can add once we have written a test script
-       # run: npm test
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
         
