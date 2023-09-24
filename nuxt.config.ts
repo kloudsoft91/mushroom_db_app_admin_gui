@@ -13,7 +13,7 @@ export default {
     {
       name: 'home',
       path: '/',
-      component: 'pages/admin_gui.vue'
+      component: 'pages/index.vue'
     },
   ],
   //Tailwind CSS config
