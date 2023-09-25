@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout 
-        uses: actions/checkout@main
+        uses: actions/checkout@v3
 
       - name: Setup node env 
         uses: actions/setup-node@v3
@@ -27,30 +27,29 @@ jobs:
           node-version: ${{ matrix.node-version }}
           check-latest: true
 
-      - name: Get yarn cache directory path 🛠
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-        
-      - name: Cache node modules #to speed up creation of files e.g. dependencies
+      - name: cache node modules #to speed up creation of files e.g. dependencies
         id: cache-npm
         uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
-      - name: Install dependencies
-        run: yarn
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: list the state of node modules
+        continue-on-error: true
+        run: npm list
 
-      - name: Build static pages
-        run: yarn generate
-        
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-        
+      - name: install dependencies
+        run: npm install
+
+      - name: build static pages
+        run: npm run generate
+
+      - name: deploy to github pages
+        run: npm run deploy
