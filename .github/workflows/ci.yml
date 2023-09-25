@@ -55,6 +55,6 @@ jobs:
 
       - name: deploy to github pages
         run: |
-          git config user.email ${{ secrets.USER_EMAIL }}
-          git config user.name ${{ secrets.USER_NAME }}
+          git config user.email "${{ secrets.USER_EMAIL }}"
+          git config user.name "${{ secrets.USER_NAME }}"
           npm run deploy
