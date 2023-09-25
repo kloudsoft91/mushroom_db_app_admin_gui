@@ -54,10 +54,7 @@ jobs:
         run: npm run generate
 
       - name: deploy to github pages
-        env:
-          USER_EMAIL: ${{ secrets.USER_EMAIL }}
-          USER_NAME: ${{ secrets.USER_NAME }}
         run: |
-          git config user.email "%USER_EMAIL%"
-          git config user.name "%USER_NAME%"
+          git config user.email ${{ secrets.USER_EMAIL }}
+          git config user.name ${{ secrets.USER_NAME }}
           npm run deploy
