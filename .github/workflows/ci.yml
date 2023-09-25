@@ -54,7 +54,9 @@ jobs:
         run: npm run generate
 
       - name: deploy to github pages
-        run: |
-          git config user.email "nayakaran@gmail.com"
-          git config user.name "${{ secrets.USER_NAME }}"
-          npm run deploy
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: gh-pages
+          build_dir: public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
