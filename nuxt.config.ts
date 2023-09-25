@@ -6,6 +6,13 @@ export default {
     buildAssetsDir: 'assets',
   },
   devtools: { enabled: false },
+  css: ['~/assets/css/tailwind.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   modules: [
     '@nuxt/ui'
   ],
