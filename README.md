@@ -8,11 +8,11 @@ This is a companion app to the main app in the following repository: https://git
 
 ## Authors
 
--
--
-- Joel Yap, ID: 21007112
-- Emily Ferguson, ID: 21013503
-- Karan Nayak, ID: 21002217
+- Rosie Hall
+- Adam Norman
+- Joel Yap
+- Emily Ferguson
+- Karan Nayak
 
 
 ## Run Locally
