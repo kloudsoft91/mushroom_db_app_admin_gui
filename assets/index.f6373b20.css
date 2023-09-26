@@ -1,0 +1,1 @@
+.string{color:#ff8c00}.number{color:#006400}.boolean,.null{color:#00f}.key{color:#483d8b}.line{counter-increment:lines}.line:before{color:#738a9466;content:counter(lines);margin-right:1.5rem}
