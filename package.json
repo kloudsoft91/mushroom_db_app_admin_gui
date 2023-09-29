@@ -18,5 +18,12 @@
         "postcss": "^8.4.28",
         "tailwindcss": "^3.3.3",
         "gh-pages": "latest"
-    }
+    },
+    "dependencies": {
+        "@nuxt/ui": "latest",
+        "nuxt": "^3.7.3",
+        "postcss": "^8.4.28",
+        "tailwindcss": "^3.3.3",
+        "gh-pages": "latest"
+  }
 }
