@@ -54,6 +54,9 @@ jobs:
       - name: install dependencies
         run: npm install
 
+      - name: Build site
+        run: npm run build
+
       - name: build static pages
         run: npm run generate
 
