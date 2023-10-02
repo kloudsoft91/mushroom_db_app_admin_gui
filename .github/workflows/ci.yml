@@ -61,7 +61,7 @@ jobs:
         if: runner.os == 'macOS' # upload artifact from macos build only
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./output/public
+          path: .output/public
 
   deploy:
     runs-on: windows-latest
