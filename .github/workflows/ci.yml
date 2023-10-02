@@ -14,7 +14,7 @@ jobs:
     
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [macos-latest]
         node-version: [18.x] # can add extra versions later as a list if needed
 
     steps:
