@@ -3,7 +3,7 @@
     <navbar />
     <!-- Main content -->
     <div class="pl-5% py-2">
-        <button class="border-1 border-black rounded-lg px-2 py-1 w-11/12 " @click="showLoadJSONModal = !showLoadJSONModal">Click here if you want to edit an existing Mushroom</button>
+        <button class="border border-black rounded-lg px-2 py-1 w-11/12 " @click="showLoadJSONModal = !showLoadJSONModal">Click here if you want to edit an existing Mushroom</button>
         <input_json v-show="showLoadJSONModal" @close-loadJSONModal="showLoadJSONModal = false" />
     </div>
     <div class="pl-4 pr-4 flex">
