@@ -1,7 +1,7 @@
 <template>
     <!-- JSON Render Box -->
     <div class="flex p-4 border border-slate-200 w-1/2">
-        <div class="relative w-full overflow-hidden mt-2 mb-2 pt-2">
+        <div class="z-0 relative w-full overflow-hidden mt-2 mb-2 pt-2">
             <span class="absolute top-0 left-4 px-2 py-1 text-base uppercase rounded-b-lg text-inherit bg-yellow-300">json</span>
             <div class="flex justify-end">
                 <div class="flex">
@@ -9,7 +9,7 @@
                     <button class="absolute top-0 right-0 px-2 py-1 text-base rounded-b-lg text-white bg-black dark:text-black dark:bg-white" @click="copy" @mouseleave="copied = false">Copy Code</button>
                 </div>
             </div>
-            <div class="z-0 flex relative w-full mt-14">
+            <div class="flex relative w-full mt-14">
                 <pre class="flex overflow-x-auto p-2 leading-relaxed counter-reset:lines">
                     <code class="w-full flex-col" v-html="syntaxHighlight(mushJSON)" />
                 </pre>
