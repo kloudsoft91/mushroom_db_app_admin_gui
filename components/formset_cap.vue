@@ -2,33 +2,73 @@
     <fieldset class="mb-2 border-1 border-slate-150 px-2" id="mush_cap_fset">
         <legend>Cap Features</legend>
         <label for="mush_cap_desc">Cap Description</label>
-        <input type="text" id="mush_cap_desc" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capDescription" @change="addMushKey('cap_features', capDescription, 'description')" />
+        <input
+            type="text"
+            id="mush_cap_desc"
+            class="mb-2 border-1 border-slate-150 flex w-full"
+            v-model="capDescription"
+            @change="addMushKey('cap_features', capDescription, 'description')" />
 
         <label for="mush_cap_colour">Cap Colour</label>
-        <select id="mush_cap_colour" name="mush_cap_colour" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capColour" @change="addMushKey('cap_features', capColour, 'colour')">
-            <option value="white">White</option>
-            <option value="red">Red</option>
-            <option value="yellowish-brown">Yellowish-Brown</option>
+        <select
+            id="mush_cap_colour"
+            name="mush_cap_colour"
+            class="mb-2 border-1 border-slate-150 flex w-full"
+            v-model="capColour"
+            @change="addMushKey('cap_features', capColour, 'colour')">
+                <option value="white">White</option>
+                <option value="red">Red</option>
+                <option value="yellowish-brown">Yellowish-Brown</option>
             <option value="pink">Pink</option>
         </select>
 
         <label for="mush_cap_diameter_min">Min Diameter (mm)</label>
-        <input type="text" id="mush_cap_diameter_min" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capDiaMin" @change="addMushKey('cap_features', parseInt(capDiaMin), 'diameter_min')" />
+        <input
+            type="text"
+            id="mush_cap_diameter_min"
+            class="mb-2 border-1 border-slate-150 flex w-full"
+            v-model="capDiaMin"
+            @change="addMushKey('cap_features', parseInt(capDiaMin), 'diameter_min')" />
 
         <label for="mush_cap_diameter_max">Max Diameter (mm)</label>
-        <input type="text" id="mush_cap_diameter_max" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capDiaMax" @change="addMushKey('cap_features', parseInt(capDiaMax), 'diameter_max')" />
+        <input
+            type="text"
+            id="mush_cap_diameter_max"
+            class="mb-2 border-1 border-slate-150 flex w-full"
+            v-model="capDiaMax"
+            @change="addMushKey('cap_features', parseInt(capDiaMax), 'diameter_max')" />
 
         <label for="mush_cap_thickness_min">Min Thickness (mm)</label>
-        <input type="text" id="mush_cap_thickness_min" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capThcMin" @change="addMushKey('cap_features', parseInt(capThcMin), 'thickness_min')" />
+        <input
+            type="text"
+            id="mush_cap_thickness_min"
+            class="mb-2 border-1 border-slate-150 flex w-full"
+            v-model="capThcMin"
+            @change="addMushKey('cap_features', parseInt(capThcMin), 'thickness_min')" />
 
         <label for="mush_cap_thickness_max">Max Thickness (mm)</label>
-        <input type="text" id="mush_cap_thickness_max" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capThcMax" @change="addMushKey('cap_features', parseInt(capThcMax), 'thickness_max')" />
+        <input
+            type="text"
+            id="mush_cap_thickness_max"
+            class="mb-2 border-1 border-slate-150 flex w-full"
+            v-model="capThcMax"
+            @change="addMushKey('cap_features', parseInt(capThcMax), 'thickness_max')" />
 
         <label for="mush_cap_texture">Texture</label>
-        <input type="text" id="mush_cap_texture" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capTexture" @change="addMushKey('cap_features', capTexture, 'texture')" />
+        <input
+            type="text"
+            id="mush_cap_texture"
+            class="mb-2 border-1 border-slate-150 flex w-full"
+            v-model="capTexture"
+            @change="addMushKey('cap_features', capTexture, 'texture')" />
 
         <label for="mush_cap_shape">Shape</label>
-        <input type="text" id="mush_cap_shape" class="mb-2 border-1 border-slate-150 flex w-full" v-model="capShape" @change="addMushKey('cap_features', capShape, 'shape')" />
+        <input
+            type="text"
+            id="mush_cap_shape"
+            class="mb-2 border-1 border-slate-150 flex w-full"
+            v-model="capShape"
+            @change="addMushKey('cap_features', capShape, 'shape')" />
     </fieldset>
 </template>
 
@@ -51,4 +91,31 @@ const addMushKey = (key, val, subKey = "") => {
         mushJSON.value[key] = val;
     }
 }
+
+watch(mushJSON, async (newMushJSON, oldMushJSON) => {
+    if (mushJSON.value['cap_features']['description']) {
+        capDescription.value = mushJSON.value['cap_features']['description']
+    }
+    if (mushJSON.value['cap_features']['colour']) {
+        capColour.value = mushJSON.value['cap_features']['colour']
+    }
+    if (mushJSON.value['cap_features']['diameter_min']) {
+        capDiaMin.value = mushJSON.value['cap_features']['diameter_min']
+    }
+    if (mushJSON.value['cap_features']['diameter_max']) {
+        capDiaMax.value = mushJSON.value['cap_features']['diameter_max']
+    }
+    if (mushJSON.value['cap_features']['thickness_min']) {
+        capThcMin.value = mushJSON.value['cap_features']['thickness_min']
+    }
+    if (mushJSON.value['cap_features']['thickness_max']) {
+        capThcMax.value = mushJSON.value['cap_features']['thickness_max']
+    }
+    if (mushJSON.value['cap_features']['texture']) {
+        capTexture.value = mushJSON.value['cap_features']['texture']
+    }
+    if (mushJSON.value['cap_features']['shape']) {
+        capShape.value = mushJSON.value['cap_features']['shape']
+    }
+})
 </script>

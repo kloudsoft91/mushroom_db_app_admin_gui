@@ -12,8 +12,11 @@
 import { ref } from 'vue'
 const mushJSON = useState('mushJSON')
 const inputJSON = ref("")
+const emit = defineEmits([
+    'close-loadJSONModal'
+])
 
-const addJSON = (input_text) => {
-    mushJSON.value = JSON.parse(input_text);
+const addJSON = (inputText) => {
+    mushJSON.value = JSON.parse(inputText)
 }
 </script>
