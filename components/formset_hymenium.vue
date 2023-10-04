@@ -1,5 +1,5 @@
 <template>
-    <fieldset class="mb-2 border-1 border-slate-150 px-2" id="mush_gills_fset">
+    <fieldset class="mb-2 border-1 border-slate-200 px-2" id="mush_gills_fset">
         <legend>Hymenium Features</legend>
         <label for="mush_gills_desc">Gills Description</label>
         <input

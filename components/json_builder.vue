@@ -9,7 +9,7 @@
             <formset_stipe />
             <formset_hymenium />
             <formset_cap />
-            <button type="submit" class="border border-black rounded-lg px-2 py-1 w-auto justify-self-right">Reset</button>
+            <button type="submit" class="border border-black dark:border-white rounded-lg px-2 py-1 w-auto justify-self-right">Reset</button>
         </form>
     </div>
 </template>

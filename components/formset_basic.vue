@@ -1,5 +1,5 @@
 <template>
-    <fieldset class="mb-2 border-1 border-slate-150 px-2" id="mush_basic_info_fset">
+    <fieldset class="mb-2 border-1 border-slate-200 px-2" id="mush_basic_info_fset">
         <legend>Basic Description / Info</legend>
         <label for="mush_latin">Latin Names*</label>
         <input

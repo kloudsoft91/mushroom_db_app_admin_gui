@@ -1,5 +1,5 @@
 <template>
-    <fieldset class="mb-2 border-1 border-slate-150 px-2" id="mush_cap_fset">
+    <fieldset class="mb-2 border-1 border-slate-200 px-2" id="mush_cap_fset">
         <legend>Cap Features</legend>
         <label for="mush_cap_desc">Cap Description</label>
         <input

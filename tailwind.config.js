@@ -28,6 +28,9 @@ module.exports = {
     extend: {
       margin: {
         '5%': '5%',
+      },
+      width: {
+        '90%': '90%'
       }
     },
   },

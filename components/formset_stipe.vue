@@ -1,5 +1,5 @@
 <template>
-    <fieldset class="mb-2 border-1 border-slate-150 px-2" id="mush_stipe_fset">
+    <fieldset class="mb-2 border-1 border-slate-200 px-2" id="mush_stipe_fset">
         <legend>Stipe Features</legend>
         <label for="mush_stipe_desc">Stipe Description</label>
         <input

@@ -9,7 +9,7 @@
                     <button class="absolute top-0 right-0 px-2 py-1 text-base rounded-b-lg text-white bg-black dark:text-black dark:bg-white" @click="copy" @mouseleave="copied = false">Copy Code</button>
                 </div>
             </div>
-            <div class="flex relative w-full mt-14">
+            <div class="z-0 flex relative w-full mt-14">
                 <pre class="flex overflow-x-auto p-2 leading-relaxed counter-reset:lines">
                     <code class="w-full flex-col" v-html="syntaxHighlight(mushJSON)" />
                 </pre>
