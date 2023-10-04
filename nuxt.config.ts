@@ -27,11 +27,11 @@ export default {
   TailwindModules: [
     '@nuxtjs/tailwindcss'
   ],
-  vite: {
-    server: {
-      fs: {
-        strict: false
-      }
-    }
-  }
+  // vite: {
+  //   server: {
+  //     fs: {
+  //       strict: false
+  //     }
+  //   }
+  // }
 }

@@ -101,7 +101,7 @@
         <select
             id="mush_timeofyear"
             name="mush_timeofyear"
-            class="form-input"
+            class="form-input h-32"
             v-model="timeOfYear"
             @change="addMushKey('time_of_year', timeOfYear)"
             multiple>
