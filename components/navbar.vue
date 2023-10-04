@@ -1,8 +1,8 @@
 <template>
-    <header class="desktop:block">
+    <header class="block">
         <nav class="bg-emerald-500 flex content-center">
             <div class="mb-2 flex">
-                <h1 class="indent-5 font-semibold light:text-white dark:text-black text-lg tablet:text-xl desktop:text-3xl">Mushy MetaData Helper</h1>
+                <h1 class="indent-5 font-semibold text-3xl text-white dark:text-black">Mushy MetaData Helper</h1>
             </div>
         </nav>
     </header>

@@ -1,9 +1,9 @@
 <template>
     <div class="z-1 fixed flex inset-x-0 inset-y-0 justify-center bg-gray-700/80" @click="$emit('close-loadJSONModal')">
-        <div class="text-center h-4/5 w-1/2 mt-5% pt-2 light:bg-white dark:bg-black rounded-3xl" @click.stop>
-        <h2 class="indent-5 font-semibold light:text-black dark:text-white text-lg tablet:text-xl desktop:text-3xl">Add your existing JSON MetaData here</h2>
+        <div class="text-center h-4/5 w-1/2 mt-5% pt-2 bg-white dark:bg-black rounded-3xl" @click.stop>
+        <h2 class="indent-5 font-semibold text-black dark:text-white text-3xl">Add your existing JSON MetaData here</h2>
         <textarea class="ml-5% my-2 border border-slate-2000 h-10/12 flex w-18/20" v-model="inputJSON" />
-        <button class="border border-black rounded-lg px-2 py-1 w-11/12" @click="addJSON(inputJSON); $emit('close-loadJSONModal')">Add</button>
+        <button class="border border-black dark:border-white rounded-lg px-2 py-1 w-11/12" @click="addJSON(inputJSON); $emit('close-loadJSONModal')">Add</button>
         </div>
     </div>
 </template>
