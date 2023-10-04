@@ -5,7 +5,7 @@
         <input
             type="text"
             id="mush_gills_desc"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="hymeniumDescription"
             @change="addMushKey('hymenium', hymeniumDescription, 'description')" />
 
@@ -13,7 +13,7 @@
         <input
             type="text"
             id="mush_gills_type"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="hymeniumType"
             @change="addMushKey('hymenium', hymeniumType, 'type')" />
 
@@ -21,7 +21,7 @@
         <select
             id="mush_gills_colour"
             name="mush_gills_colour"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="hymeniumColour"
             @change="addMushKey('hymenium', hymeniumColour, 'colour')">
                 <option value="white">White</option>
@@ -34,7 +34,7 @@
         <input
             type="text"
             id="mush_gills_attach"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="hymeniumAttachment"
             @change="addMushKey('hymenium', hymeniumAttachment, 'attachment')" />
 
@@ -42,7 +42,7 @@
         <select
             id="mush_spore_colour"
             name="mush_spore_colour"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="hymeniumSporeColour"
             @change="addMushKey('hymenium', hymeniumSporeColour, 'spore_colour')">
                 <option value="white">White</option>

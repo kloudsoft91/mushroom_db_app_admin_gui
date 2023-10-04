@@ -1,6 +1,6 @@
 <template>
     <!-- JSON Render Box -->
-    <div class="flex p-4 border-1 border-slate-150 w-1/2">
+    <div class="flex p-4 border border-slate-200 w-1/2">
         <div class="relative w-full overflow-hidden mt-2 mb-2 pt-2 rounded-lg">
             <span class="absolute top-0 left-4 px-2 py-1 text-base uppercase rounded-b-lg text-inherit bg-yellow-300">json</span>
             <div class="flex justify-end">

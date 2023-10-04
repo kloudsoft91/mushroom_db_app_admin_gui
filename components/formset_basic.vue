@@ -5,7 +5,7 @@
         <input
             type="text"
             id="mush_latin"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="latinNames"
             @change="addMushKey('latin_names', latinNames.split(',').map((item) => {return item.trimStart()}))" />
         
@@ -13,7 +13,7 @@
         <input
             type="text"
             id="mush_common"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="commonNames"
             @change="addMushKey('common_names', commonNames.split(',').map((item) => {return item.trimStart()}))" />
         
@@ -21,7 +21,7 @@
         <input
             type="text"
             id="mush_maori"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="maoriNames"
             @change="addMushKey('maori_names', maoriNames.split(',').map((item) => {return item.trimStart()}))" />
         
@@ -29,7 +29,7 @@
         <input
             type="text"
             id="mush_genus"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="genus"
             @change="addMushKey('genus', genus)" />
         
@@ -37,7 +37,7 @@
         <input
             type="text"
             id="mush_desc"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="description"
             @change="addMushKey('description', description)" />
         
@@ -45,7 +45,7 @@
         <input
             type="text"
             id="mush_lookalikes"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="lookalikes"
             @change="addMushKey('lookalikes', lookalikes.split(',').map(Number))" />
 
@@ -53,7 +53,7 @@
         <input
             type="text"
             id="mush_lookalikes_desc"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="lookalikeDesc"
             @change="addMushKey('lookalikes_description', lookalikeDesc)" />
         
@@ -61,7 +61,7 @@
         <input
             type="text"
             id="mush_links"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="links"
             @change="addMushKey('links', links.split(',').map((item) => {return item.trimStart()}))" />
         
@@ -69,7 +69,7 @@
         <input
             type="text"
             id="mush_books"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="books"
             @change="addMushKey('nz_books', books.split(',').map((item) => {return item.trimStart()}))" />
         
@@ -77,7 +77,7 @@
         <input
             type="text"
             id="mush_edibility"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="edibility"
             @change="addMushKey('edibility', edibility)" />
 
@@ -85,7 +85,7 @@
         <input
             type="text"
             id="mush_ecology"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="ecology"
             @change="addMushKey('ecology', ecology)" />
 
@@ -93,7 +93,7 @@
         <input
             type="text"
             id="mush_environment"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="environment"
             @change="addMushKey('environment', environment)" />
 
@@ -101,7 +101,7 @@
         <select
             id="mush_timeofyear"
             name="mush_timeofyear"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="timeOfYear"
             @change="addMushKey('time_of_year', timeOfYear)"
             multiple>
@@ -123,7 +123,7 @@
         <select
             id="mush_native"
             name="mush_native"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="native"
             @change="addMushKey('native_or_introduced', native==='Native')">
                 <option>Native</option>
@@ -134,7 +134,7 @@
         <input
             type="text"
             id="mush_juvenile_photos"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="juvenilePhotos"
             @change="addMushKey('juvenile_photos', juvenilePhotos.split(',').map((item) => {return item.trimStart()}))" />
         
@@ -142,7 +142,7 @@
         <input
             type="text"
             id="mush_adult_photos"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="adultPhotos"
             @change="addMushKey('adult_photos', adultPhotos.split(',').map((item) => {return item.trimStart()}))" />
         
@@ -150,7 +150,7 @@
         <input
             type="text"
             id="mush_elderly_photos"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="elderlyPhotos"
             @change="addMushKey('elderly_photos', elderlyPhotos.split(',').map((item) => {return item.trimStart()}))" />
     </fieldset>

@@ -1,5 +1,5 @@
 <template>
-    <fieldset class="mb-2 grid grid-cols-4 border-1 border-slate-150 px-2 py-1" id="mush_tags_fset">
+    <fieldset class="mb-2 grid grid-cols-4 border border-slate-200 px-2 py-1" id="mush_tags_fset">
         <legend>Mushroom Tags</legend>
         <div class="px-2 col-start-1 justify-self-center">
             <label for="mush_poison">Poisonous</label>&nbsp;

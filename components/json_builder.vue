@@ -1,6 +1,6 @@
 <template>
     <!-- JSON Builder Box -->
-    <div class="flex p-4 border-1 border-slate-150 w-1/2">
+    <div class="flex p-4 border border-slate-200 w-1/2">
         <form id="input_form" class="w-full grid" @keydown.enter="$event.preventDefault()">
             <label id="mush_note_1">* Enter list values separated by a comma. e.g. Red, Yellow</label>
             <br><br>

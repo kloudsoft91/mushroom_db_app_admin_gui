@@ -5,7 +5,7 @@
         <input
             type="text"
             id="mush_stipe_desc"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="stipeDescription"
             @change="addMushKey('stipe_features', stipeDescription, 'description')" />
 
@@ -13,7 +13,7 @@
         <input
             type="text"
             id="mush_stipe_diameter_min"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="stipeDiaMin"
             @change="addMushKey('stipe_features', parseInt(stipeDiaMin), 'diameter_min')" />
 
@@ -21,7 +21,7 @@
         <input
             type="text"
             id="mush_stipe_diameter_max"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="stipeDiaMax"
             @change="addMushKey('stipe_features', parseInt(stipeDiaMax), 'diameter_max')" />
 
@@ -29,7 +29,7 @@
         <select
             id="mush_stipe_colour"
             name="mush_stipe_colour"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="stipeColour"
             @change="addMushKey('stipe_features', stipeColour, 'colour')">
                 <option value="white">White</option>
@@ -42,7 +42,7 @@
         <input
             type="text"
             id="mush_stipe_length_min"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="stipeLenMin"
             @change="addMushKey('stipe_features', parseInt(stipeLenMin), 'length_min')" />
 
@@ -50,7 +50,7 @@
         <input
             type="text"
             id="mush_stipe_length_max"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="stipeLenMax"
             @change="addMushKey('stipe_features', parseInt(stipeLenMax), 'length_max')" />
 
@@ -58,7 +58,7 @@
         <input
             type="text"
             id="mush_stipe_height_min"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="stipeHgtMin"
             @change="addMushKey('stipe_features', parseInt(stipeHgtMin), 'height_min')" />
 
@@ -66,7 +66,7 @@
         <input
             type="text"
             id="mush_stipe_height_max"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="stipeHgtMax"
             @change="addMushKey('stipe_features', parseInt(stipeHgtMax), 'height_max')" /> -->
 
@@ -74,7 +74,7 @@
         <select
             id="mush_stipe_bruise_colour"
             name="mush_stipe_bruise_colour"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="stipeBruiseColour"
             @change="addMushKey('stipe_features', stipeBruiseColour, 'bruising_colour')">
                 <option value="na">N/A - No bruising</option>
@@ -85,7 +85,7 @@
         <input
             type="text"
             id="mush_stipe_attachment"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="stipeattachment"
             @change="addMushKey('stipe_features', stipeattachment, 'attachment')" />
     </fieldset>

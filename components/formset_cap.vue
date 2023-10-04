@@ -5,7 +5,7 @@
         <input
             type="text"
             id="mush_cap_desc"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="capDescription"
             @change="addMushKey('cap_features', capDescription, 'description')" />
 
@@ -13,7 +13,7 @@
         <select
             id="mush_cap_colour"
             name="mush_cap_colour"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="capColour"
             @change="addMushKey('cap_features', capColour, 'colour')">
                 <option value="white">White</option>
@@ -26,7 +26,7 @@
         <input
             type="text"
             id="mush_cap_diameter_min"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="capDiaMin"
             @change="addMushKey('cap_features', parseInt(capDiaMin), 'diameter_min')" />
 
@@ -34,7 +34,7 @@
         <input
             type="text"
             id="mush_cap_diameter_max"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="capDiaMax"
             @change="addMushKey('cap_features', parseInt(capDiaMax), 'diameter_max')" />
 
@@ -42,7 +42,7 @@
         <input
             type="text"
             id="mush_cap_thickness_min"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="capThcMin"
             @change="addMushKey('cap_features', parseInt(capThcMin), 'thickness_min')" />
 
@@ -50,7 +50,7 @@
         <input
             type="text"
             id="mush_cap_thickness_max"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="capThcMax"
             @change="addMushKey('cap_features', parseInt(capThcMax), 'thickness_max')" />
 
@@ -58,7 +58,7 @@
         <input
             type="text"
             id="mush_cap_texture"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="capTexture"
             @change="addMushKey('cap_features', capTexture, 'texture')" />
 
@@ -66,7 +66,7 @@
         <input
             type="text"
             id="mush_cap_shape"
-            class="mb-2 border-1 border-slate-150 flex w-full"
+            class="form-input"
             v-model="capShape"
             @change="addMushKey('cap_features', capShape, 'shape')" />
     </fieldset>
