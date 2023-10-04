@@ -4,6 +4,6 @@
 
 @layer components {
     .form-input {
-        @apply mb-2 border border-slate-200 flex w-full h-auto dark:text-black;
+        @apply mb-2 border border-slate-200 flex w-full h-8 rounded-md dark:text-black;
     }
 }
