@@ -25,7 +25,14 @@ module.exports = {
       'ultra': '1280px',
       // => @media (min-width: 1280px) { ... } 
     },
-    extend: {},
+    extend: {
+      margin: {
+        '5%': '5%',
+      },
+      width: {
+        '90%': '90%'
+      }
+    },
   },
   plugins: []  
 }

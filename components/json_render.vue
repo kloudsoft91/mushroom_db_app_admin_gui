@@ -1,12 +1,12 @@
 <template>
     <!-- JSON Render Box -->
-    <div class="flex p-4 border-1 border-slate-150 w-1/2">
-        <div class="relative w-full overflow-hidden mt-2 mb-2 pt-2 rounded-lg">
+    <div class="flex p-4 border border-slate-200 w-1/2">
+        <div class="relative w-full overflow-hidden mt-2 mb-2 pt-2">
             <span class="absolute top-0 left-4 px-2 py-1 text-base uppercase rounded-b-lg text-inherit bg-yellow-300">json</span>
             <div class="flex justify-end">
                 <div class="flex">
                     <span class="absolute right-28 top-0 py-1 text-base text-emerald-500" v-if="copied">Copied Code &#10003;</span>
-                    <button class="absolute top-0 right-0 px-2 py-1 text-base rounded-b-lg light:text-white light:bg-black dark:text-black dark:bg-white" @click="copy" @mouseleave="copied = false">Copy Code</button>
+                    <button class="absolute top-0 right-0 px-2 py-1 text-base rounded-b-lg text-white bg-black dark:text-black dark:bg-white" @click="copy" @mouseleave="copied = false">Copy Code</button>
                 </div>
             </div>
             <div class="flex relative w-full mt-14">

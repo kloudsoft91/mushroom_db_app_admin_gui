@@ -1,29 +1,54 @@
 <template>
-    <fieldset class="mb-2 border-1 border-slate-150 px-2" id="mush_gills_fset">
+    <fieldset class="mb-2 border border-slate-200 px-2" id="mush_gills_fset">
         <legend>Hymenium Features</legend>
         <label for="mush_gills_desc">Gills Description</label>
-        <input type="text" id="mush_gills_desc" class="mb-2 border-1 border-slate-150 flex w-full" v-model="hymeniumDescription" @change="addMushKey('hymenium', hymeniumDescription, 'description')" />
+        <input
+            type="text"
+            id="mush_gills_desc"
+            class="form-input"
+            v-model="hymeniumDescription"
+            @change="addMushKey('hymenium', hymeniumDescription, 'description')" />
 
         <label for="mush_gills_type">Type</label>
-        <input type="text" id="mush_gills_type" class="mb-2 border-1 border-slate-150 flex w-full" v-model="hymeniumType" @change="addMushKey('hymenium', hymeniumType, 'type')" />
+        <input
+            type="text"
+            id="mush_gills_type"
+            class="form-input"
+            v-model="hymeniumType"
+            @change="addMushKey('hymenium', hymeniumType, 'type')" />
 
         <label for="mush_gills_colour">Gill Colour</label>
-        <select id="mush_gills_colour" name="mush_gills_colour" class="mb-2 border-1 border-slate-150 flex w-full" v-model="hymeniumColour" @change="addMushKey('hymenium', hymeniumColour, 'colour')">
-            <option value="white">White</option>
-            <option value="black">Black</option>
-            <option value="orange-brown">Orange-Brown</option>
-            <option value="palebrown">Pale Brown</option>
+        <select
+            id="mush_gills_colour"
+            name="mush_gills_colour"
+            class="form-input"
+            v-model="hymeniumColour"
+            @change="addMushKey('hymenium', hymeniumColour, 'colour')">
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="orange-brown">Orange-Brown</option>
+                <option value="palebrown">Pale Brown</option>
         </select>
 
         <label for="mush_gills_attach">Gill Attachment</label>
-        <input type="text" id="mush_gills_attach" class="mb-2 border-1 border-slate-150 flex w-full" v-model="hymeniumAttachment" @change="addMushKey('hymenium', hymeniumAttachment, 'attachment')" />
+        <input
+            type="text"
+            id="mush_gills_attach"
+            class="form-input"
+            v-model="hymeniumAttachment"
+            @change="addMushKey('hymenium', hymeniumAttachment, 'attachment')" />
 
         <label for="mush_spore_colour">Spore Colour</label>
-        <select id="mush_spore_colour" name="mush_spore_colour" class="mb-2 border-1 border-slate-150 flex w-full" v-model="hymeniumSporeColour" @change="addMushKey('hymenium', hymeniumSporeColour, 'spore_colour')">
-            <option value="white">White</option>
-            <option value="black">Black</option>
-            <option value="purplebrown">Purple Brown</option>
-            <option value="rustbrown">Rust Brown</option>
+        <select
+            id="mush_spore_colour"
+            name="mush_spore_colour"
+            class="form-input"
+            v-model="hymeniumSporeColour"
+            @change="addMushKey('hymenium', hymeniumSporeColour, 'spore_colour')">
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="purplebrown">Purple Brown</option>
+                <option value="rustbrown">Rust Brown</option>
         </select>
     </fieldset>
 </template>
@@ -44,4 +69,22 @@ const addMushKey = (key, val, subKey = "") => {
         mushJSON.value[key] = val;
     }
 }
+
+watch(mushJSON, async (newMushJSON, oldMushJSON) => {
+    if (mushJSON.value['hymenium']['description']) {
+        hymeniumDescription.value = mushJSON.value['hymenium']['description']
+    }
+    if (mushJSON.value['hymenium']['type']) {
+        hymeniumType.value = mushJSON.value['hymenium']['type']
+    }
+    if (mushJSON.value['hymenium']['colour']) {
+        hymeniumColour.value = mushJSON.value['hymenium']['colour']
+    }
+    if (mushJSON.value['hymenium']['attachment']) {
+        hymeniumAttachment.value = mushJSON.value['hymenium']['attachment']
+    }
+    if (mushJSON.value['hymenium']['spore_colour']) {
+        hymeniumSporeColour.value = mushJSON.value['hymenium']['spore_colour']
+    }
+})
 </script>
