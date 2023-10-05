@@ -1,6 +1,6 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests
 
-name: ci
+name: CI-CD Workflow
 
 on:
   push:
@@ -29,13 +29,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
           check-latest: true
 
-      - name: cache node modules #to speed up creation of files e.g. dependencies
+      - name: Cache build artifacts and node modules
         id: cache-npm
         uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
-          path: ~/.npm
+          path: |
+            .npm
+            .nuxt
+            .output
+            dist
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
@@ -50,13 +54,33 @@ jobs:
       - name: install dependencies
         run: npm install
 
+      - name: Build site
+        run: npm run build
+
       - name: build static pages
         run: npm run generate
 
-      - name: deploy to github pages
-        uses: crazy-max/ghaction-github-pages@v4
+      - name: Upload artifact
+        # if: runner.os == 'macOS' # upload artifact from macos build only
+        uses: actions/upload-pages-artifact@v2
         with:
-          target_branch: gh-pages
-          build_dir: .output/public
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: .output/public
+
+  deploy:
+    runs-on: windows-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    needs: build
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
