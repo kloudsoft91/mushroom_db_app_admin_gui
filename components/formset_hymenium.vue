@@ -9,13 +9,13 @@
             v-model="hymeniumDescription"
             @change="addMushKey('hymenium', hymeniumDescription, 'description')" />
 
-        <label for="mush_gills_type">Type</label>
+        <!-- <label for="mush_gills_type">Type</label>
         <input
             type="text"
             id="mush_gills_type"
             class="form-input"
             v-model="hymeniumType"
-            @change="addMushKey('hymenium', hymeniumType, 'type')" />
+            @change="addMushKey('hymenium', hymeniumType, 'type')" /> -->
 
         <label for="mush_gills_colour">Gill Colour</label>
         <select
@@ -26,8 +26,10 @@
             @change="addMushKey('hymenium', hymeniumColour, 'colour')">
                 <option value="white">White</option>
                 <option value="black">Black</option>
+                <option value="yellowish-orange">Yellowish-Orange</option>
                 <option value="orange-brown">Orange-Brown</option>
                 <option value="palebrown">Pale Brown</option>
+                <option value="indigo">Indigo</option>
         </select>
 
         <label for="mush_gills_attach">Gill Attachment</label>

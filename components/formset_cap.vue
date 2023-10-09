@@ -18,8 +18,12 @@
             @change="addMushKey('cap_features', capColour, 'colour')">
                 <option value="white">White</option>
                 <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
                 <option value="yellowish-brown">Yellowish-Brown</option>
+                <option value="yellowish-orange">Yellowish-Orange</option>
+                <option value="olive-brown">Olive-Brown</option>
                 <option value="pink">Pink</option>
+                <option value="lilac">Lilac</option>
                 <option value="indigo">Indigo</option>
         </select>
 
