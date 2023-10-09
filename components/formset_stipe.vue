@@ -36,6 +36,7 @@
                 <option value="red">Red</option>
                 <option value="yellowish-brown">Yellowish-Brown</option>
                 <option value="pink">Pink</option>
+                <option value="indigo">Indigo</option>
         </select>
 
         <label for="mush_stipe_length_min">Min Length (mm)</label>
@@ -82,12 +83,17 @@
         </select>
 
         <label for="mush_stipe_attachment">Attachment</label>
-        <input
+        <select
             type="text"
             id="mush_stipe_attachment"
             class="form-input"
             v-model="stipeattachment"
-            @change="addMushKey('stipe_features', stipeattachment, 'attachment')" />
+            @change="addMushKey('stipe_features', stipeattachment, 'attachment')">
+            <option value="bare">Bare</option>
+            <option value="ring">Ring</option>
+            <option value="volva">Volva</option>
+            <option value="both">Both</option>
+        </select>
     </fieldset>
 </template>
 

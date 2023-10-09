@@ -31,12 +31,22 @@
         </select>
 
         <label for="mush_gills_attach">Gill Attachment</label>
-        <input
+        <select
             type="text"
             id="mush_gills_attach"
             class="form-input"
             v-model="hymeniumAttachment"
-            @change="addMushKey('hymenium', hymeniumAttachment, 'attachment')" />
+            @change="addMushKey('hymenium', hymeniumAttachment, 'attachment')">
+            <option value="none">None</option>
+            <option value="adnate">Adnate</option>
+            <option value="adnexed">Adnexed</option>
+            <option value="decurrent">Decurrent</option>
+            <option value="emarginate">Emarginate</option>
+            <option value="free">Free</option>
+            <option value="seceding">Seceding</option>
+            <option value="sinuate">Sinuate</option>
+            <option value="subdecurrent">Subdecurrent</option>
+        </select>
 
         <label for="mush_spore_colour">Spore Colour</label>
         <select
@@ -49,6 +59,7 @@
                 <option value="black">Black</option>
                 <option value="purplebrown">Purple Brown</option>
                 <option value="rustbrown">Rust Brown</option>
+                <option value="reddishpink">Reddish Pink</option>
         </select>
     </fieldset>
 </template>

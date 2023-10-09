@@ -19,7 +19,8 @@
                 <option value="white">White</option>
                 <option value="red">Red</option>
                 <option value="yellowish-brown">Yellowish-Brown</option>
-            <option value="pink">Pink</option>
+                <option value="pink">Pink</option>
+                <option value="indigo">Indigo</option>
         </select>
 
         <label for="mush_cap_diameter_min">Min Diameter (mm)</label>
@@ -63,12 +64,23 @@
             @change="addMushKey('cap_features', capTexture, 'texture')" />
 
         <label for="mush_cap_shape">Shape</label>
-        <input
+        <select
             type="text"
             id="mush_cap_shape"
             class="form-input"
             v-model="capShape"
-            @change="addMushKey('cap_features', capShape, 'shape')" />
+            @change="addMushKey('cap_features', capShape, 'shape')">
+            <option value="umbonate">Umbonate</option>
+            <option value="campanulate">Campanulate</option>
+            <option value="conical">Conical</option>
+            <option value="convex">Convex</option>
+            <option value="depressed">Depressed</option>
+            <option value="flat">Flat</option>
+            <option value="infundibuliform">Infundibuliform</option>
+            <option value="offset">Offset</option>
+            <option value="ovate">Ovate</option>
+            <option value="umbillicate">Umbillicate</option>
+        </select>
     </fieldset>
 </template>
 

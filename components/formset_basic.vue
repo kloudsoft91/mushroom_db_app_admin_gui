@@ -82,12 +82,16 @@
             @change="addMushKey('edibility', edibility)" />
 
         <label for="mush_ecology">Ecology</label>
-        <input
+        <select
             type="text"
             id="mush_ecology"
             class="form-input"
             v-model="ecology"
-            @change="addMushKey('ecology', ecology)" />
+            @change="addMushKey('ecology', ecology)">
+            <option value="mycorrihizal">Mycorrihizal</option>
+            <option value="saprotrophic">Saprotrophic</option>
+            <option value="parasitic">Parasitic</option>
+        </select>
 
         <label for="mush_environment">Environment</label>
         <input
