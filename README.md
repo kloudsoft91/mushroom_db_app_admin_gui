@@ -3,7 +3,7 @@
 
 This project was the result of a Capstone Project run through Massey University. It is a webapp designed using NuxtJS to easily identify the different variety of mushrooms and fungi that grow in Aotearoa New Zealand.
 
-This is a companion app to the main app in the following repository: https://github.com/kloudsoft91/mushroom_db_app.git
+This is a companion app to the main app in the following repository: https://github.com/kloudsoft91/mushroom_db_app
 
 
 ## Authors
