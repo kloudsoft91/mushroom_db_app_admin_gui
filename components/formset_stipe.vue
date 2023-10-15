@@ -29,7 +29,7 @@
         <select
             id="mush_stipe_colour"
             name="mush_stipe_colour"
-            class="form-input"
+            class="form-input h-24"
             v-model="stipeColour"
             @change="addMushKey('stipe_features', stipeColour, 'colour')"
             multiple>

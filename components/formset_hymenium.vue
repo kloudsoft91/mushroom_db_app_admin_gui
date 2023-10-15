@@ -21,7 +21,7 @@
         <select
             id="mush_gills_colour"
             name="mush_gills_colour"
-            class="form-input"
+            class="form-input h-24"
             v-model="hymeniumColour"
             @change="addMushKey('hymenium', hymeniumColour, 'colour')"
             multiple>

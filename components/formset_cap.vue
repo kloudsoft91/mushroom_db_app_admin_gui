@@ -13,7 +13,7 @@
         <select
             id="mush_cap_colour"
             name="mush_cap_colour"
-            class="form-input"
+            class="form-input h-24"
             v-model="capColour"
             @change="addMushKey('cap_features', capColour, 'colour')"
             multiple>
@@ -87,7 +87,7 @@
         <select
             type="text"
             id="mush_cap_shape"
-            class="form-input"
+            class="form-input h-16"
             v-model="capShape"
             @change="addMushKey('cap_features', capShape, 'shape')"
             multiple>
