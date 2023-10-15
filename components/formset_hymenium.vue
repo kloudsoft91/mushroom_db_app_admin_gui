@@ -23,13 +23,32 @@
             name="mush_gills_colour"
             class="form-input"
             v-model="hymeniumColour"
-            @change="addMushKey('hymenium', hymeniumColour, 'colour')">
+            @change="addMushKey('hymenium', hymeniumColour, 'colour')"
+            multiple>
                 <option value="white">White</option>
-                <option value="black">Black</option>
+                <option value="tan">Tan</option>
+                <option value="cream">Cream</option>
+                <option value="yellow">Yellow</option>
+                <option value="yellowish-brown">Yellowish-Brown</option>
                 <option value="yellowish-orange">Yellowish-Orange</option>
+                <option value="orange">Orange</option>
                 <option value="orange-brown">Orange-Brown</option>
-                <option value="palebrown">Pale Brown</option>
+                <option value="pale brown">Pale Brown</option>
+                <option value="brown">Brown</option>
+                <option value="olive-brown">Olive-Brown</option>
+                <option value="dark brown">Dark Brown</option>
+                <option value="pale green">Pale Green</option>
+                <option value="green">Green</option>
+                <option value="olive">Olive</option>
                 <option value="indigo">Indigo</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="pink">Pink</option>
+                <option value="lilac">Lilac</option>
+                <option value="purple">Purple</option>
+                <option value="violet">Violet</option>
+                <option value="grey">Grey</option>
+                <option value="black">Black</option>
         </select>
 
         <label for="mush_gills_attach">Gill Attachment</label>
@@ -59,9 +78,9 @@
             @change="addMushKey('hymenium', hymeniumSporeColour, 'spore_colour')">
                 <option value="white">White</option>
                 <option value="black">Black</option>
-                <option value="purplebrown">Purple Brown</option>
-                <option value="rustbrown">Rust Brown</option>
-                <option value="reddishpink">Reddish Pink</option>
+                <option value="purple brown">Purple Brown</option>
+                <option value="rust brown">Rust Brown</option>
+                <option value="reddish pink">Reddish-Pink</option>
         </select>
     </fieldset>
 </template>

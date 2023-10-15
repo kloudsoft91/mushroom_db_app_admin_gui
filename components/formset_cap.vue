@@ -15,16 +15,32 @@
             name="mush_cap_colour"
             class="form-input"
             v-model="capColour"
-            @change="addMushKey('cap_features', capColour, 'colour')">
+            @change="addMushKey('cap_features', capColour, 'colour')"
+            multiple>
                 <option value="white">White</option>
-                <option value="red">Red</option>
+                <option value="tan">Tan</option>
+                <option value="cream">Cream</option>
                 <option value="yellow">Yellow</option>
                 <option value="yellowish-brown">Yellowish-Brown</option>
                 <option value="yellowish-orange">Yellowish-Orange</option>
+                <option value="orange">Orange</option>
+                <option value="orange-brown">Orange-Brown</option>
+                <option value="pale brown">Pale Brown</option>
+                <option value="brown">Brown</option>
                 <option value="olive-brown">Olive-Brown</option>
+                <option value="dark brown">Dark Brown</option>
+                <option value="pale green">Pale Green</option>
+                <option value="green">Green</option>
+                <option value="olive">Olive</option>
+                <option value="indigo">Indigo</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
                 <option value="pink">Pink</option>
                 <option value="lilac">Lilac</option>
-                <option value="indigo">Indigo</option>
+                <option value="purple">Purple</option>
+                <option value="violet">Violet</option>
+                <option value="grey">Grey</option>
+                <option value="black">Black</option>
         </select>
 
         <label for="mush_cap_diameter_min">Min Diameter (mm)</label>
@@ -73,17 +89,18 @@
             id="mush_cap_shape"
             class="form-input"
             v-model="capShape"
-            @change="addMushKey('cap_features', capShape, 'shape')">
-            <option value="umbonate">Umbonate</option>
-            <option value="campanulate">Campanulate</option>
-            <option value="conical">Conical</option>
-            <option value="convex">Convex</option>
-            <option value="depressed">Depressed</option>
-            <option value="flat">Flat</option>
-            <option value="infundibuliform">Infundibuliform</option>
-            <option value="offset">Offset</option>
-            <option value="ovate">Ovate</option>
-            <option value="umbillicate">Umbillicate</option>
+            @change="addMushKey('cap_features', capShape, 'shape')"
+            multiple>
+                <option value="umbonate">Umbonate</option>
+                <option value="campanulate">Campanulate</option>
+                <option value="conical">Conical</option>
+                <option value="convex">Convex</option>
+                <option value="depressed">Depressed</option>
+                <option value="flat">Flat</option>
+                <option value="infundibuliform">Infundibuliform</option>
+                <option value="offset">Offset</option>
+                <option value="ovate">Ovate</option>
+                <option value="umbillicate">Umbillicate</option>
         </select>
     </fieldset>
 </template>

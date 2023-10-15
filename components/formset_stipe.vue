@@ -31,16 +31,32 @@
             name="mush_stipe_colour"
             class="form-input"
             v-model="stipeColour"
-            @change="addMushKey('stipe_features', stipeColour, 'colour')">
+            @change="addMushKey('stipe_features', stipeColour, 'colour')"
+            multiple>
                 <option value="white">White</option>
-                <option value="red">Red</option>
+                <option value="tan">Tan</option>
+                <option value="cream">Cream</option>
                 <option value="yellow">Yellow</option>
                 <option value="yellowish-brown">Yellowish-Brown</option>
                 <option value="yellowish-orange">Yellowish-Orange</option>
+                <option value="orange">Orange</option>
+                <option value="orange-brown">Orange-Brown</option>
+                <option value="pale brown">Pale Brown</option>
+                <option value="brown">Brown</option>
                 <option value="olive-brown">Olive-Brown</option>
-                <option value="pink">Pink</option>
+                <option value="dark brown">Dark Brown</option>
+                <option value="pale green">Pale Green</option>
+                <option value="green">Green</option>
+                <option value="olive">Olive</option>
                 <option value="indigo">Indigo</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="pink">Pink</option>
                 <option value="lilac">Lilac</option>
+                <option value="purple">Purple</option>
+                <option value="violet">Violet</option>
+                <option value="grey">Grey</option>
+                <option value="black">Black</option>
         </select>
 
         <label for="mush_stipe_length_min">Min Length (mm)</label>
