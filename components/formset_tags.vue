@@ -5,7 +5,7 @@
             <label for="mush_poison">Poisonous</label>&nbsp;
             <input
                 type="checkbox"
-                value="Poisonous"
+                value="poisonous"
                 id="mush_poison"
                 v-model="tags"
                 @change="addMushKey('tags', tags)" />
@@ -14,7 +14,7 @@
             <label for="mush_edible">Edible</label>&nbsp;
             <input
                 type="checkbox"
-                value="Edible"
+                value="edible"
                 id="mush_edible"
                 v-model="tags"
                 @change="addMushKey('tags', tags)" />
@@ -23,7 +23,7 @@
             <label for="mush_psycho">Psychoactive</label>&nbsp;
             <input
                 type="checkbox"
-                value="Psychoactive"
+                value="psychoactive"
                 id="mush_psycho"
                 v-model="tags"
                 @change="addMushKey('tags', tags)" />
@@ -32,7 +32,7 @@
             <label for="mush_gourmet">Gourmet</label>&nbsp;
             <input
                 type="checkbox"
-                value="Gourmet"
+                value="gourmet"
                 id="mush_gourmet"
                 v-model="tags"
                 @change="addMushKey('tags', tags)" />

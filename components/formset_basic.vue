@@ -82,12 +82,16 @@
             @change="addMushKey('edibility', edibility)" />
 
         <label for="mush_ecology">Ecology</label>
-        <input
+        <select
             type="text"
             id="mush_ecology"
             class="form-input"
             v-model="ecology"
-            @change="addMushKey('ecology', ecology)" />
+            @change="addMushKey('ecology', ecology)">
+            <option value="mycorrihizal">Mycorrihizal</option>
+            <option value="saprotrophic">Saprotrophic</option>
+            <option value="parasitic">Parasitic</option>
+        </select>
 
         <label for="mush_environment">Environment</label>
         <input
@@ -105,18 +109,18 @@
             v-model="timeOfYear"
             @change="addMushKey('time_of_year', timeOfYear)"
             multiple>
-                <option>January</option>
-                <option>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
+                <option value="january">January</option>
+                <option value="february">February</option>
+                <option value="march">March</option>
+                <option value="april">April</option>
+                <option value="may">May</option>
+                <option value="june">June</option>
+                <option value="july">July</option>
+                <option value="august">August</option>
+                <option value="september">September</option>
+                <option value="october">October</option>
+                <option value="november">November</option>
+                <option value="december">December</option>
         </select>
 
         <label for="mush_native">Native? (or Introduced)</label>
@@ -129,8 +133,16 @@
                 <option>Native</option>
                 <option>Introduced</option>
         </select>
+
+        <label for="mush_photos">Photos*</label>
+        <input
+            type="text"
+            id="mush_photos"
+            class="form-input"
+            v-model="photos"
+            @change="addMushKey('photos', photos.split(',').map((item) => {return item.trimStart()}))" />
         
-        <label for="mush_juvenile_photos">Juvenile Photos*</label>
+        <!-- <label for="mush_juvenile_photos">Juvenile Photos*</label>
         <input
             type="text"
             id="mush_juvenile_photos"
@@ -152,7 +164,7 @@
             id="mush_elderly_photos"
             class="form-input"
             v-model="elderlyPhotos"
-            @change="addMushKey('elderly_photos', elderlyPhotos.split(',').map((item) => {return item.trimStart()}))" />
+            @change="addMushKey('elderly_photos', elderlyPhotos.split(',').map((item) => {return item.trimStart()}))" /> -->
     </fieldset>
 </template>
 
@@ -173,9 +185,10 @@ const ecology = ref("")
 const environment = ref("")
 const timeOfYear = ref([])
 const native = ref()
-const juvenilePhotos = ref("")
-const adultPhotos = ref("")
-const elderlyPhotos = ref("")
+const photos = ref("")
+// const juvenilePhotos = ref("")
+// const adultPhotos = ref("")
+// const elderlyPhotos = ref("")
 
 const addMushKey = (key, val, subKey = "") => {
     if (["stipe_features", "hymenium", "cap_features"].includes(key) && subKey != "") {
@@ -232,14 +245,17 @@ watch(mushJSON, async (newMushJSON, oldMushJSON) => {
             native.value = "Introduced"
         }
     }
-    if (mushJSON.value['juvenile_photos']) {
-        juvenilePhotos.value = mushJSON.value['juvenile_photos'].join(', ')
+    if (mushJSON.value['photos']) {
+        photos.value = mushJSON.value['photos'].join(', ')
     }
-    if (mushJSON.value['adult_photos']) {
-        adultPhotos.value = mushJSON.value['adult_photos'].join(', ')
-    }
-    if (mushJSON.value['elderly_photos']) {
-        elderlyPhotos.value = mushJSON.value['elderly_photos'].join(', ')
-    }
+    // if (mushJSON.value['juvenile_photos']) {
+    //     juvenilePhotos.value = mushJSON.value['juvenile_photos'].join(', ')
+    // }
+    // if (mushJSON.value['adult_photos']) {
+    //     adultPhotos.value = mushJSON.value['adult_photos'].join(', ')
+    // }
+    // if (mushJSON.value['elderly_photos']) {
+    //     elderlyPhotos.value = mushJSON.value['elderly_photos'].join(', ')
+    // }
 })
 </script>
