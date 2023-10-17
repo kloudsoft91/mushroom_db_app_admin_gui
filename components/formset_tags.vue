@@ -46,7 +46,7 @@ const mushJSON = useState('mushJSON')
 const tags = ref([])
 
 const addMushKey = (key, val, subKey = "") => {
-    if (["stipe_features", "hymenium", "cap_features"].includes(key) && subKey != "") {
+    if (["stipe_features", "gills", "cap_features"].includes(key) && subKey != "") {
         mushJSON.value[key][subKey] = val;
     } else {
         mushJSON.value[key] = val;

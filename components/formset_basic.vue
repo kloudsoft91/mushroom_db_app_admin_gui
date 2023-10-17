@@ -129,9 +129,9 @@
             name="mush_native"
             class="form-input"
             v-model="native"
-            @change="addMushKey('native_or_introduced', native==='Native')">
-                <option>Native</option>
-                <option>Introduced</option>
+            @change="addMushKey('native_or_introduced', native)">
+                <option value="native">Native</option>
+                <option value="introduced">Introduced</option>
         </select>
 
         <label for="mush_photos">Photos*</label>
@@ -184,14 +184,14 @@ const edibility = ref("")
 const ecology = ref("")
 const environment = ref("")
 const timeOfYear = ref([])
-const native = ref()
+const native = ref("")
 const photos = ref("")
 // const juvenilePhotos = ref("")
 // const adultPhotos = ref("")
 // const elderlyPhotos = ref("")
 
 const addMushKey = (key, val, subKey = "") => {
-    if (["stipe_features", "hymenium", "cap_features"].includes(key) && subKey != "") {
+    if (["stipe_features", "gills", "cap_features"].includes(key) && subKey != "") {
         mushJSON.value[key][subKey] = val;
     } else {
         mushJSON.value[key] = val;
@@ -239,11 +239,12 @@ watch(mushJSON, async (newMushJSON, oldMushJSON) => {
         timeOfYear.value = mushJSON.value['time_of_year']
     }
     if (mushJSON.value['native_or_introduced']) {
-        if (mushJSON.value['native_or_introduced'] == true) {
-            native.value = "Native"
+        native.value = mushJSON.value('native')
+        /* if (mushJSON.value['native_or_introduced'] == true) {
+            native.value ="Native"
         } else {
             native.value = "Introduced"
-        }
+        } */
     }
     if (mushJSON.value['photos']) {
         photos.value = mushJSON.value['photos'].join(', ')
