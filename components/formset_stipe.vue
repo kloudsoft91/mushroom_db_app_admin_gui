@@ -9,7 +9,7 @@
             v-model="stipeDescription"
             @change="addMushKey('stipe_features', stipeDescription, 'description')" />
 
-        <label for="mush_stipe_diameter_min">Min Diameter (mm)</label>
+        <label for="mush_stipe_diameter_min">Min Diameter (cm)</label>
         <input
             type="text"
             id="mush_stipe_diameter_min"
@@ -17,7 +17,7 @@
             v-model="stipeDiaMin"
             @change="addMushKey('stipe_features', parseInt(stipeDiaMin), 'diameter_min')" />
 
-        <label for="mush_stipe_diameter_max">Max Diameter (mm)</label>
+        <label for="mush_stipe_diameter_max">Max Diameter (cm)</label>
         <input
             type="text"
             id="mush_stipe_diameter_max"
@@ -59,7 +59,7 @@
                 <option value="black">Black</option>
         </select>
 
-        <label for="mush_stipe_length_min">Min Length (mm)</label>
+        <label for="mush_stipe_length_min">Min Length (cm)</label>
         <input
             type="text"
             id="mush_stipe_length_min"
@@ -67,7 +67,7 @@
             v-model="stipeLenMin"
             @change="addMushKey('stipe_features', parseInt(stipeLenMin), 'length_min')" />
 
-        <label for="mush_stipe_length_max">Max Length (mm)</label>
+        <label for="mush_stipe_length_max">Max Length (cm)</label>
         <input
             type="text"
             id="mush_stipe_length_max"
@@ -102,17 +102,17 @@
                 <option value="blueish">Blueish</option>
         </select>
 
-        <label for="mush_stipe_attachment">Attachment</label>
+        <label for="mush_stipe_attachment">Type</label>
         <select
             type="text"
             id="mush_stipe_attachment"
             class="form-input"
             v-model="stipeattachment"
-            @change="addMushKey('stipe_features', stipeattachment, 'attachment')">
+            @change="addMushKey('stipe_features', stipeattachment, 'type')">
             <option value="bare">Bare</option>
             <option value="ring">Ring</option>
             <option value="volva">Volva</option>
-            <option value="both">Both</option>
+            <option value="ring volva">Both</option>
         </select>
     </fieldset>
 </template>
@@ -132,7 +132,7 @@ const stipeBruiseColour = ref("")
 const stipeattachment = ref("")
 
 const addMushKey = (key, val, subKey = "") => {
-    if (["stipe_features", "hymenium", "cap_features"].includes(key) && subKey != "") {
+    if (["stipe_features", "gills", "cap_features"].includes(key) && subKey != "") {
         mushJSON.value[key][subKey] = val;
     } else {
         mushJSON.value[key] = val;
@@ -167,8 +167,8 @@ watch(mushJSON, async (newMushJSON, oldMushJSON) => {
     if (mushJSON.value['stipe_features']['bruising_colour']) {
         stipeBruiseColour.value = mushJSON.value['stipe_features']['bruising_colour']
     }
-    if (mushJSON.value['stipe_features']['attachment']) {
-        stipeattachment.value = mushJSON.value['stipe_features']['attachment']
+    if (mushJSON.value['stipe_features']['type']) {
+        stipeattachment.value = mushJSON.value['stipe_features']['type']
     }
 })
 </script>

@@ -1,6 +1,6 @@
 export default {
     id: 0,
     stipe_features: {},
-    hymenium: {},
+    gills: {},
     cap_features: {}
 }

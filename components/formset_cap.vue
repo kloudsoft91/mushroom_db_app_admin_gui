@@ -43,7 +43,7 @@
                 <option value="black">Black</option>
         </select>
 
-        <label for="mush_cap_diameter_min">Min Diameter (mm)</label>
+        <label for="mush_cap_diameter_min">Min Diameter (cm)</label>
         <input
             type="text"
             id="mush_cap_diameter_min"
@@ -51,7 +51,7 @@
             v-model="capDiaMin"
             @change="addMushKey('cap_features', parseInt(capDiaMin), 'diameter_min')" />
 
-        <label for="mush_cap_diameter_max">Max Diameter (mm)</label>
+        <label for="mush_cap_diameter_max">Max Diameter (cm)</label>
         <input
             type="text"
             id="mush_cap_diameter_max"
@@ -59,7 +59,7 @@
             v-model="capDiaMax"
             @change="addMushKey('cap_features', parseInt(capDiaMax), 'diameter_max')" />
 
-        <label for="mush_cap_thickness_min">Min Thickness (mm)</label>
+        <label for="mush_cap_thickness_min">Min Thickness (cm)</label>
         <input
             type="text"
             id="mush_cap_thickness_min"
@@ -67,7 +67,7 @@
             v-model="capThcMin"
             @change="addMushKey('cap_features', parseInt(capThcMin), 'thickness_min')" />
 
-        <label for="mush_cap_thickness_max">Max Thickness (mm)</label>
+        <label for="mush_cap_thickness_max">Max Thickness (cm)</label>
         <input
             type="text"
             id="mush_cap_thickness_max"
@@ -118,7 +118,7 @@ const capTexture = ref("")
 const capShape = ref("")
 
 const addMushKey = (key, val, subKey = "") => {
-    if (["stipe_features", "hymenium", "cap_features"].includes(key) && subKey != "") {
+    if (["stipe_features", "gills", "cap_features"].includes(key) && subKey != "") {
         mushJSON.value[key][subKey] = val;
     } else {
         mushJSON.value[key] = val;

@@ -7,7 +7,7 @@
             id="mush_gills_desc"
             class="form-input"
             v-model="hymeniumDescription"
-            @change="addMushKey('hymenium', hymeniumDescription, 'description')" />
+            @change="addMushKey('gills', hymeniumDescription, 'description')" />
 
         <!-- <label for="mush_gills_type">Type</label>
         <input
@@ -23,7 +23,7 @@
             name="mush_gills_colour"
             class="form-input h-24"
             v-model="hymeniumColour"
-            @change="addMushKey('hymenium', hymeniumColour, 'colour')"
+            @change="addMushKey('gills', hymeniumColour, 'colour')"
             multiple>
                 <option value="white">White</option>
                 <option value="tan">Tan</option>
@@ -57,7 +57,7 @@
             id="mush_gills_attach"
             class="form-input"
             v-model="hymeniumAttachment"
-            @change="addMushKey('hymenium', hymeniumAttachment, 'attachment')">
+            @change="addMushKey('gills', hymeniumAttachment, 'attachment')">
             <option value="none">None</option>
             <option value="adnate">Adnate</option>
             <option value="adnexed">Adnexed</option>
@@ -75,7 +75,7 @@
             name="mush_spore_colour"
             class="form-input"
             v-model="hymeniumSporeColour"
-            @change="addMushKey('hymenium', hymeniumSporeColour, 'spore_colour')">
+            @change="addMushKey('gills', hymeniumSporeColour, 'spore_colour')">
                 <option value="white">White</option>
                 <option value="black">Black</option>
                 <option value="purple brown">Purple Brown</option>
@@ -95,7 +95,7 @@ const hymeniumAttachment = ref("")
 const hymeniumSporeColour = ref("")
 
 const addMushKey = (key, val, subKey = "") => {
-    if (["stipe_features", "hymenium", "cap_features"].includes(key) && subKey != "") {
+    if (["stipe_features", "gills", "cap_features"].includes(key) && subKey != "") {
         mushJSON.value[key][subKey] = val;
     } else {
         mushJSON.value[key] = val;
@@ -103,20 +103,20 @@ const addMushKey = (key, val, subKey = "") => {
 }
 
 watch(mushJSON, async (newMushJSON, oldMushJSON) => {
-    if (mushJSON.value['hymenium']['description']) {
-        hymeniumDescription.value = mushJSON.value['hymenium']['description']
+    if (mushJSON.value['gills']['description']) {
+        hymeniumDescription.value = mushJSON.value['gills']['description']
     }
-    if (mushJSON.value['hymenium']['type']) {
-        hymeniumType.value = mushJSON.value['hymenium']['type']
+    if (mushJSON.value['gills']['type']) {
+        hymeniumType.value = mushJSON.value['gills']['type']
     }
-    if (mushJSON.value['hymenium']['colour']) {
-        hymeniumColour.value = mushJSON.value['hymenium']['colour']
+    if (mushJSON.value['gills']['colour']) {
+        hymeniumColour.value = mushJSON.value['gills']['colour']
     }
-    if (mushJSON.value['hymenium']['attachment']) {
-        hymeniumAttachment.value = mushJSON.value['hymenium']['attachment']
+    if (mushJSON.value['gills']['attachment']) {
+        hymeniumAttachment.value = mushJSON.value['gills']['attachment']
     }
-    if (mushJSON.value['hymenium']['spore_colour']) {
-        hymeniumSporeColour.value = mushJSON.value['hymenium']['spore_colour']
+    if (mushJSON.value['gills']['spore_colour']) {
+        hymeniumSporeColour.value = mushJSON.value['gills']['spore_colour']
     }
 })
 </script>
