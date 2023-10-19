@@ -239,7 +239,7 @@ watch(mushJSON, async (newMushJSON, oldMushJSON) => {
         timeOfYear.value = mushJSON.value['time_of_year']
     }
     if (mushJSON.value['native_or_introduced']) {
-        native.value = mushJSON.value('native')
+        native.value = mushJSON.value('native_or_introduced')
         /* if (mushJSON.value['native_or_introduced'] == true) {
             native.value ="Native"
         } else {
