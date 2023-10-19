@@ -88,7 +88,7 @@
             class="form-input"
             v-model="ecology"
             @change="addMushKey('ecology', ecology)">
-            <option value="mycorrihizal">Mycorrihizal</option>
+            <option value="mycorrhizal">Mycorrhizal</option>
             <option value="saprotrophic">Saprotrophic</option>
             <option value="parasitic">Parasitic</option>
         </select>
