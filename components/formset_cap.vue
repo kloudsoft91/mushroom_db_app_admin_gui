@@ -101,6 +101,7 @@
                 <option value="offset">Offset</option>
                 <option value="ovate">Ovate</option>
                 <option value="umbillicate">Umbillicate</option>
+                <option value="irregular">Irregular</option>
         </select>
     </fieldset>
 </template>
