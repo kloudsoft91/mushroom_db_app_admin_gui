@@ -15,7 +15,7 @@
             id="mush_stipe_diameter_min"
             class="form-input"
             v-model="stipeDiaMin"
-            @change="addMushKey('stipe_features', parseInt(stipeDiaMin), 'diameter_min')" />
+            @change="addMushKey('stipe_features', parseFloat(stipeDiaMin), 'diameter_min')" />
 
         <label for="mush_stipe_diameter_max">Max Diameter (cm)</label>
         <input
@@ -23,7 +23,7 @@
             id="mush_stipe_diameter_max"
             class="form-input"
             v-model="stipeDiaMax"
-            @change="addMushKey('stipe_features', parseInt(stipeDiaMax), 'diameter_max')" />
+            @change="addMushKey('stipe_features', parseFloat(stipeDiaMax), 'diameter_max')" />
 
         <label for="mush_stipe_colour">Stipe Colour</label>
         <select
@@ -65,7 +65,7 @@
             id="mush_stipe_length_min"
             class="form-input"
             v-model="stipeLenMin"
-            @change="addMushKey('stipe_features', parseInt(stipeLenMin), 'length_min')" />
+            @change="addMushKey('stipe_features', parseFloat(stipeLenMin), 'length_min')" />
 
         <label for="mush_stipe_length_max">Max Length (cm)</label>
         <input
@@ -73,7 +73,7 @@
             id="mush_stipe_length_max"
             class="form-input"
             v-model="stipeLenMax"
-            @change="addMushKey('stipe_features', parseInt(stipeLenMax), 'length_max')" />
+            @change="addMushKey('stipe_features', parseFloat(stipeLenMax), 'length_max')" />
 
         <!-- <label for="mush_stipe_height_min">Min Height (mm)</label>
         <input
@@ -81,7 +81,7 @@
             id="mush_stipe_height_min"
             class="form-input"
             v-model="stipeHgtMin"
-            @change="addMushKey('stipe_features', parseInt(stipeHgtMin), 'height_min')" />
+            @change="addMushKey('stipe_features', parseFloat(stipeHgtMin), 'height_min')" />
 
         <label for="mush_stipe_height_max">Max Height (mm)</label>
         <input
@@ -89,7 +89,7 @@
             id="mush_stipe_height_max"
             class="form-input"
             v-model="stipeHgtMax"
-            @change="addMushKey('stipe_features', parseInt(stipeHgtMax), 'height_max')" /> -->
+            @change="addMushKey('stipe_features', parseFloat(stipeHgtMax), 'height_max')" /> -->
 
         <label for="mush_stipe_bruise_colour">Bruising Colour</label>
         <select

@@ -49,7 +49,7 @@
             id="mush_cap_diameter_min"
             class="form-input"
             v-model="capDiaMin"
-            @change="addMushKey('cap_features', parseInt(capDiaMin), 'diameter_min')" />
+            @change="addMushKey('cap_features', parseFloat(capDiaMin), 'diameter_min')" />
 
         <label for="mush_cap_diameter_max">Max Diameter (cm)</label>
         <input
@@ -57,7 +57,7 @@
             id="mush_cap_diameter_max"
             class="form-input"
             v-model="capDiaMax"
-            @change="addMushKey('cap_features', parseInt(capDiaMax), 'diameter_max')" />
+            @change="addMushKey('cap_features', parseFloat(capDiaMax), 'diameter_max')" />
 
         <label for="mush_cap_thickness_min">Min Thickness (cm)</label>
         <input
@@ -65,7 +65,7 @@
             id="mush_cap_thickness_min"
             class="form-input"
             v-model="capThcMin"
-            @change="addMushKey('cap_features', parseInt(capThcMin), 'thickness_min')" />
+            @change="addMushKey('cap_features', parseFloat(capThcMin), 'thickness_min')" />
 
         <label for="mush_cap_thickness_max">Max Thickness (cm)</label>
         <input
@@ -73,7 +73,7 @@
             id="mush_cap_thickness_max"
             class="form-input"
             v-model="capThcMax"
-            @change="addMushKey('cap_features', parseInt(capThcMax), 'thickness_max')" />
+            @change="addMushKey('cap_features', parseFloat(capThcMax), 'thickness_max')" />
 
         <label for="mush_cap_texture">Texture</label>
         <input
@@ -101,6 +101,7 @@
                 <option value="offset">Offset</option>
                 <option value="ovate">Ovate</option>
                 <option value="umbillicate">Umbillicate</option>
+                <option value="irregular">Irregular</option>
         </select>
     </fieldset>
 </template>
